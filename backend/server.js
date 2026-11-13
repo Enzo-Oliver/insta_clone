@@ -140,11 +140,6 @@ app.patch('/perfil', exigirLogin, upload.single('foto'), (req, res) => {
   }
   res.json(buscarPessoa(req.usuarioId))
 })
- 
-
-
-
-  // const legenda = req.body.legenda || ''
 
 app.listen(PORTA, () => {
   console.log(`Servidor rodando em http://localhost:${PORTA}`)

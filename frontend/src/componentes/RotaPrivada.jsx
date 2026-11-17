@@ -1,12 +1,23 @@
-import { Navigate, Outlet } from 'react-router-dom'
- 
+import { Navigate, Outlet } from "react-router-dom";
+import Menu from "./Menu";
+
 function RotaPrivada() {
-  const token = localStorage.getItem('token')
- 
+  const token = localStorage.getItem("token");
+
   if (!token) {
-    return <Navigate to="/login" />
+    return <Navigate to="/login" />;
   }
- 
-  return <Outlet />
+
+  return (
+    <>
+      <Menu />
+      <main className="container py-7"></main>
+      <div className="row justify-content-center">
+        <div className="col-12 md:col-8 xl:col-6">
+          <Outlet />
+        </div>
+      </div>
+    </>
+  );
 }
-export default RotaPrivada
+export default RotaPrivada;
